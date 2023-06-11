@@ -22,9 +22,9 @@ function onSelectBreed() {
 
     fetchCatByBreed(breedID).then(cats => {
         const catEl = cats.map(cat =>
-            `<img src="${cat.url}" alt="cat">
+            `<img class="image" src="${cat.url}" alt="cat">
             <h1 class="breed-name">${cat.breeds[0].name}</h1>
-            <p class="descripyion">${cat.breeds[0].description}</p>
+            <p class="description">${cat.breeds[0].description}</p>
             <p class="temperament"><span class="bold-temperament">Temperament: </span> ${cat.breeds[0].temperament}</p>
             `).join("");
         infoBox.style.display = "block";
