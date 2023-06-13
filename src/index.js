@@ -32,7 +32,12 @@ function onSelectBreed() {
             </div>
             `).join("");
         infoBox.style.display = "block";
-        infoBox.innerHTML += catEl;;
+        if (catEl) {
+            infoBox.innerHTML += catEl;
+        } else {
+            return Notiflix.Notify.failure(`❌ Oops! Some cat is lost!`);
+        };
+
     }).catch(() => { Notiflix.Notify.failure(`❌ Oops! Something went wrong! Try reloading the page!`) })
         .finally(() => { loader.style.display = "none" });
 
